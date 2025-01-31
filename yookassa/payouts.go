@@ -3,7 +3,7 @@ package yookassa
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/eclipsemode/go-yookassa-sdk/yookassa/model"
+	yoomodel "github.com/eclipsemode/go-yookassa-sdk/yookassa/model"
 	"go.uber.org/zap"
 	"net/http"
 )
@@ -19,7 +19,7 @@ func NewPayoutsService(client *Client, log *zap.SugaredLogger) *PayoutsSvc {
 	}
 }
 
-func (h *PayoutsSvc) MakePayout(payout *model.Payout, idempotencyKey string) (*http.Response, error) {
+func (h *PayoutsSvc) MakePayout(payout *yoomodel.Payout, idempotencyKey string) (*http.Response, error) {
 	jsonData, err := json.Marshal(payout)
 	if err != nil {
 		return nil, fmt.Errorf("error marshalling payout: %s", err)

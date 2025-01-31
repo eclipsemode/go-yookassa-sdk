@@ -20,7 +20,7 @@ func NewPaymentsService(client *Client, log *zap.SugaredLogger) *PaymentsSvc {
 	}
 }
 
-func (h *PaymentsSvc) CreatePayment(payment *model.Payment, idempotencyKey string) (*http.Response, error) {
+func (h *PaymentsSvc) CreatePayment(payment *yoomodel.Payment, idempotencyKey string) (*http.Response, error) {
 	pJSON, err := json.Marshal(payment)
 	if err != nil {
 		return nil, fmt.Errorf("error marshalling payment json: %w", err)

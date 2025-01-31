@@ -1,4 +1,4 @@
-package model
+package yoomodel
 
 type Notification struct {
 	Type   string   `json:"type"`
